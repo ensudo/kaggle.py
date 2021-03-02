@@ -9,13 +9,7 @@ from sklearn.utils import shuffle
 from torch.autograd import Variable
 
 
-# TODO incorporate one hot encoding on the classes (survived)... matrices have to be of
-#  a single type can't combine matrices and floats
-
-# TODO get accuracy >= 8
-
-# TODO tidy code
-
+# TODO incorporate one hot encoding on the classes (survived)... matrices have to be of a single type can't combine matrices and floats
 
 min_max_scaler = preprocessing.MinMaxScaler()
 
@@ -41,12 +35,11 @@ passenger.describe(include='all')
 modal_sex = passenger['Sex'].mode()
 passenger['Sex'].fillna(modal_sex, inplace=True)
 
-# calculate mean age
 # replace null with mean age
 mean_age = passenger['Age'].mean()
 passenger['Age'].fillna(mean_age, inplace=True)
 
-# Change nulls to the mean fare
+# replace null with mean fare
 mean_fare = passenger['Fare'].mean()
 passenger['Fare'].fillna(mean_fare, inplace=True)
 
